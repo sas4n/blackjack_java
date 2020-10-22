@@ -16,6 +16,8 @@ public class PlayGame {
         a_view.DisplayGameOver(a_game.IsDealerWinner());
     }
 
+    //here we have hidden dependency
+    //we need to use enum to remove hidden dependency
     int input = a_view.GetInput();
     
     if (input == 'p')
