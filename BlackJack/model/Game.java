@@ -24,12 +24,12 @@ public class Game {
   
   public boolean NewGame()
   {
+
     return m_dealer.NewGame(m_player);
   }
   
   public boolean Hit()
-  {
-    return m_dealer.Hit(m_player);
+  { return m_dealer.Hit(m_player);
   }
   
   public boolean Stand()
