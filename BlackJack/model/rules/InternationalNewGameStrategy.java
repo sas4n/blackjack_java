@@ -7,11 +7,14 @@ import BlackJack.model.Card;
 
 class InternationalNewGameStrategy extends Factory implements INewGameStrategy {
 
+  //in case of tie winner would be player
+
   public boolean NewGame(Deck a_deck, Dealer a_dealer, Player a_player) {
     /** Rona added */
     getCard(a_deck, a_player, true);
     getCard(a_deck, a_dealer, true);
     getCard(a_deck, a_player, true);
+    //we have to fix it in order to have no duplication
 
     //    Card c;
 //
@@ -26,6 +29,8 @@ class InternationalNewGameStrategy extends Factory implements INewGameStrategy {
 //    c = a_deck.GetCard();
 //    c.Show(true);
 //    a_player.DealCard(c);
+
+
   
     return true;
   }
