@@ -43,7 +43,7 @@ public class Dealer extends Player {
   }
 
   /** Rona added */
-  public boolean Stand(Player player) {
+  public boolean Stand() {
     if (m_deck != null) {
       ShowHand();
 
