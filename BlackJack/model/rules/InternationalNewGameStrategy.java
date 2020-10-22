@@ -7,9 +7,12 @@ import BlackJack.model.Card;
 
 class InternationalNewGameStrategy implements INewGameStrategy {
 
+  //in case of tie winner would be player
+
   public boolean NewGame(Deck a_deck, Dealer a_dealer, Player a_player) {
     Card c;
-  
+
+    //we have to fix it in order to have no duplication
     c = a_deck.GetCard();
     c.Show(true);
     a_player.DealCard(c);
