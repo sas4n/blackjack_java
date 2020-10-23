@@ -10,7 +10,11 @@ public class Game {
     m_dealer = new Dealer(new BlackJack.model.rules.RulesFactory());
     m_player = new Player();
   }
-    
+  public void SubscriptionToNewCards(ICardObserver subscriber)
+  {
+    m_player.Subscribe(subscriber);
+    m_dealer.Subscribe(subscriber);
+  }
     
   public boolean IsGameOver()
   {
@@ -58,7 +62,10 @@ public class Game {
     return m_player.CalcScore();
   }
 
-  public Player getPlayer(){
-    return m_player;
-  }
+//  public Player getPlayer(){
+//    return m_player;
+//  }
+//  public void add(ICardObserver subscriber){
+//    m_dealer.addSubscriber(subscriber);
+//  }
 }
