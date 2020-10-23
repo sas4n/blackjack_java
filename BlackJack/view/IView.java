@@ -6,6 +6,7 @@ package BlackJack.view;
 public interface IView
 {
   void DisplayWelcomeMessage();
+  void Pause();
   //I put into IBasicView
   //int GetInput();
   void DisplayCard(BlackJack.model.Card a_card);
