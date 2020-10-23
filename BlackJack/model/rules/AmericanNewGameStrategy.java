@@ -5,7 +5,7 @@ import BlackJack.model.Dealer;
 import BlackJack.model.Player;
 import BlackJack.model.Card;  
 
-class AmericanNewGameStrategy extends InternationalNewGameStrategy implements INewGameStrategy {
+class AmericanNewGameStrategy extends Factory {
 
   //in case of tie winner would be dealer
 
