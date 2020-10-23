@@ -18,10 +18,10 @@ public abstract class BasicView {
     }
 
     public void Pause(){
-        try{
-            System.out.println("getting ....");
-            Thread.sleep(2000);
-        }catch (Exception e){}
+//        try{
+//            System.out.println("getting ....");
+//            Thread.sleep(2000);
+//        }catch (Exception e){}
     }
 
     public void collectEvents(){
