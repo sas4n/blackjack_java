@@ -1,5 +1,8 @@
 package BlackJack.view;
 
+import BlackJack.model.Card;
+//import BlackJack.model.IGameObserver;
+
 public class SimpleView extends BasicView implements IView
 {
   public void DisplayWelcomeMessage()
@@ -26,6 +29,7 @@ public class SimpleView extends BasicView implements IView
 
         public void DisplayCard(BlackJack.model.Card a_card)
         {
+            //DisplayedCard(a_card);
             System.out.println("" + a_card.GetValue() + " of " + a_card.GetColor());
         }
 
@@ -63,4 +67,9 @@ public class SimpleView extends BasicView implements IView
             }
 
         }
-    }
+
+//    @Override
+//    public void DisplayedCard(Card card) {
+//        System.out.println("" + card.GetValue() + " of " + card.GetColor());
+//    }
+}
