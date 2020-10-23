@@ -1,16 +1,35 @@
 package BlackJack.controller;
 
+import BlackJack.model.Card;
+import BlackJack.model.ICardObserver;
 import BlackJack.view.IView;
 import BlackJack.model.Game;
 
-public class PlayGame {
+public class PlayGame implements ICardObserver {
+    private IView a_view;
+    private Game a_game;
 
-    public boolean Play(Game a_game, IView a_view) {
+    public PlayGame(IView iView, Game a_game) {
+        this.a_view = iView;
+        this.a_game = a_game;
+    }
+
+    @Override
+    public void updateNewCard(Card card) {
+        a_view.DisplayCard(card);
+        a_view.Pause();
+    }
+
+    public void showPlayerHand() {
+        a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
+        a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+    }
+
+    public boolean Play() {
         a_view.DisplayWelcomeMessage();
         //a_game.getPlayer().addSubscriber(a_view);
 
-        a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-        a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+        showPlayerHand();
 
         if (a_game.IsGameOver()) {
             a_view.DisplayGameOver(a_game.IsDealerWinner());
