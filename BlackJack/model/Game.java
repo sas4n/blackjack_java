@@ -57,6 +57,8 @@ public class Game {
   {
     return m_player.CalcScore();
   }
-    
-  
+
+  public Player getPlayer(){
+    return m_player;
+  }
 }
