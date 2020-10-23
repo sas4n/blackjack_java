@@ -19,8 +19,8 @@ public abstract class BasicView {
 
     public void Pause(){
         try{
+            System.out.println("getting ....");
             Thread.sleep(2000);
-            System.out.println("Dealer getting ....");
         }catch (Exception e){}
     }
 
