@@ -27,6 +27,7 @@ public class SimpleView extends BasicView implements IView
 //          }
 //        }
 
+
         public void DisplayCard(BlackJack.model.Card a_card)
         {
             //DisplayedCard(a_card);
