@@ -17,6 +17,13 @@ public abstract class BasicView {
         }
     }
 
+    public void Pause(){
+        try{
+            Thread.sleep(2000);
+            System.out.println("Dealer getting ....");
+        }catch (Exception e){}
+    }
+
     public void collectEvents(){
         input = GetInput();
     }
