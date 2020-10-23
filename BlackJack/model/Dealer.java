@@ -2,23 +2,30 @@ package BlackJack.model;
 
 import BlackJack.model.rules.*;
 
+import java.util.ArrayList;
+
 public class Dealer extends Player {
 
   private Deck m_deck;
   private INewGameStrategy m_newGameRule;
   private IHitStrategy m_hitRule;
+  //private ArrayList<ICardObserver> subscribers;
 
   public Dealer(RulesFactory a_rulesFactory) {
   
     m_newGameRule = a_rulesFactory.GetNewGameRule();
     m_hitRule = a_rulesFactory.GetHitRule();
+   // subscribers = new ArrayList<>();
     
     /*for(Card c : m_deck.GetCards()) {
       c.Show(true);
       System.out.println("" + c.GetValue() + " of " + c.GetColor());
     }    */
   }
-  
+
+//  public void addSubscriber(ICardObserver subscriber){
+//    subscribers.add(subscriber);
+//  }
   
   public boolean NewGame(Player a_player) {
     if (m_deck == null || IsGameOver()) {
