@@ -1,5 +1,8 @@
 package BlackJack.view;
 
+//import BlackJack.model.IGameObserver;
+
+//extends IGameObserver
 public interface IView
 {
   void DisplayWelcomeMessage();
