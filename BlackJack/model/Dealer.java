@@ -9,12 +9,14 @@ public class Dealer extends Player {
   private Deck m_deck;
   private INewGameStrategy m_newGameRule;
   private IHitStrategy m_hitRule;
+  private IWinnerStrategy m_winRule;
   //private ArrayList<ICardObserver> subscribers;
 
   public Dealer(RulesFactory a_rulesFactory) {
   
     m_newGameRule = a_rulesFactory.GetNewGameRule();
     m_hitRule = a_rulesFactory.GetHitRule();
+    m_winRule = a_rulesFactory.GetWinnerStrategy();
    // subscribers = new ArrayList<>();
     
     /*for(Card c : m_deck.GetCards()) {
@@ -22,10 +24,6 @@ public class Dealer extends Player {
       System.out.println("" + c.GetValue() + " of " + c.GetColor());
     }    */
   }
-
-//  public void addSubscriber(ICardObserver subscriber){
-//    subscribers.add(subscriber);
-//  }
   
   public boolean NewGame(Player a_player) {
     if (m_deck == null || IsGameOver()) {
@@ -65,12 +63,15 @@ public class Dealer extends Player {
   }
 
   public boolean IsDealerWinner(Player a_player) {
-    if (a_player.CalcScore() > g_maxScore) {
-      return true;
-    } else if (CalcScore() > g_maxScore) {
-      return false;
-    }
-    return CalcScore() >= a_player.CalcScore();
+//    if (a_player.CalcScore() > g_maxScore) {
+//      return true;
+//    } else if (CalcScore() > g_maxScore) {
+//      return false;
+//    }
+//    return CalcScore() >= a_player.CalcScore();
+    int dealerScore = CalcScore();
+    int playerScore = a_player.CalcScore();
+    return m_winRule.isDealerWinner(dealerScore,playerScore,g_maxScore);
   }
 
   public boolean IsGameOver() {
